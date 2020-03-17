@@ -1,9 +1,15 @@
-echo "Start build BEngine project"
-echo "Make windows proejct"
+@echo off
+echo Start build BEngine project
+SET PLATFORM="windows"
 
-cd windows
-eho %PWD%
-cmake .. -DWindwos=1
+echo Make %PLATFORM% proejct
 
-cd ../android
-cmake -DAndroid=1
+if exist %pwd%/%PLATFORM%/ (
+  echo clean %PLATFORM% dir
+  rmdir %PLATFORM%
+)
+
+mkdir %PLATFORM%
+cd %PLATFORM%
+cmake -A Win64 .. 
+cd ..

@@ -1,6 +1,17 @@
 #include <iostream>
 
-int main() {
+#include "window.h"
+
+
+int main() {  
+
   std::cout << "hellow" << std::endl;
-  return 1;
+
+  auto a = BEngine::Window::Create();
+
+  while (true) {
+    a->Update();
+  }
+
+  return 0;
 }
