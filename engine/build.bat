@@ -13,7 +13,7 @@ if "%VCPKG_PATH%" == "" (
   git clone "https://github.com/Microsoft/vcpkg.git"
   cd vcpkg
   call bootstrap-vcpkg.bat
-  
+
   echo "Install glfw3 package"
   call vcpkg install glfw3:x64-windows
 
