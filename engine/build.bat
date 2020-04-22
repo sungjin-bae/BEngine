@@ -19,6 +19,7 @@ if not exist %cd%/vcpkg.exe (
   echo Already build vcpkg porject ...
 )
 
+:: glfw3 check
 for /f "delims=" %%A in ('vcpkg list ^| findstr "glfw3:x64-windows"') do (set exist_glfw3=%%A)
 if "%exist_glfw3%" EQU "" (
   echo Install glfw3 package ...
@@ -27,6 +28,7 @@ if "%exist_glfw3%" EQU "" (
   echo Already installed glfw3 package ...
 )
 
+:: vulkan check
 for /f "delims=" %%A in ('vcpkg list ^| findstr "vulkan:x64-windows"') do (set exist_vulkan=%%A)
 if "%exist_vulkan%" EQU "" (
   echo Install vulkan package ...
@@ -36,7 +38,8 @@ if "%exist_vulkan%" EQU "" (
 )
 
 :: double check vulkan package
-:: vcpkg 에서 vulkan 패키지는 미리 설치된 패키지를 참조하는 식으로 동작한다.
+:: vcpkg 에서 vulkan 패키지는 미리 설치된 패키지를 참조하는 식으로 동작하기 때문에
+:: 바로위의 install 이 실패한 경우에 대비해 다시 확인한다.
 for /f "delims=" %%A in ('vcpkg list ^| findstr "vulkan:x64-windows"') do (set exist_vulkan=%%A)
 if "%exist_vulkan%" EQU "" (
   echo Need to Install vulkan sdk ...
