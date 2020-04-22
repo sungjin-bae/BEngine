@@ -1,11 +1,6 @@
 @echo off
 echo Start build BEngine project
 set PLATFORM="windows"
-
-set CURRENT_DIR=%cd%
-set VCPKG_PATH=%VCPKG_PATH%
-
-echo %VCPKG_PATH%
 echo Make %PLATFORM% proejct
 
 :: check vcpkg
@@ -56,8 +51,8 @@ if not exist %pwd%/%PLATFORM%/ (
   mkdir %PLATFORM%
 )
 
-echo %cd%
-set TOOLCHAIN_PATH="%VCPKG_PATH%\scripts\buildsystems\vcpkg.cmake"
+
+set TOOLCHAIN_PATH="%cd%\vcpkg\scripts\buildsystems\vcpkg.cmake"
 cd %PLATFORM%
 cmake -G "Visual Studio 15 2017 Win64" ^
     -DCMAKE_TOOLCHAIN_FILE=%TOOLCHAIN_PATH% ^
