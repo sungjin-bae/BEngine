@@ -48,6 +48,15 @@ if "%exist_vulkan%" EQU "" (
   cd ..
   goto QUIT
 )
+
+:: check boost
+for /f "delims=" %%A in ('vcpkg list ^| findstr "boost-thread:x64-windows"') do (set boost_thread=%%A)
+if "%boost_thread%" EQU "" (
+  echo Install boost-thread package ...
+  call vcpkg install boost-thread:x64-windows
+) else (
+  echo Already installed boost-thread package ...
+)
 cd ..
 
 
