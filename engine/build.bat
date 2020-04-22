@@ -47,11 +47,15 @@ if "%exist_vulkan%" EQU "" (
 )
 cd ..
 
+
+:: make mdir
 if not exist %pwd%/%PLATFORM%/ (
   mkdir %PLATFORM%
 )
 
-
+:: make visual studio project
+:: NOTE windows 에서 cpplint 는 visual studio 를 통해 추가한다.
+:: 이유 : https://gitlab.kitware.com/cmake/cmake/issues/18808
 set TOOLCHAIN_PATH="%cd%\vcpkg\scripts\buildsystems\vcpkg.cmake"
 cd %PLATFORM%
 cmake -G "Visual Studio 15 2017 Win64" ^
