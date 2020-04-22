@@ -10,20 +10,20 @@ find_package(glfw3 REQUIRED)
 #include_directories($ENV{VULKAN_SDK}/Include)
 #link_directories($ENV{VULKAN_SDK}/Lib)
 
-include_directories ( 
+include_directories (
     include )
 
 set ( SOURCE
   src/main.cpp
-  src/window.cpp
+  src/internal/window.cpp
 )
 
 set ( HEADERS
-  include/window.h
+  include/internal/window.h
 )
 
-add_executable( ${PROJECT_NAME} 
-    ${SOURCE} 
+add_executable( ${PROJECT_NAME}
+    ${SOURCE}
     ${HEADERS})
 
 

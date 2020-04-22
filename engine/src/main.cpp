@@ -1,10 +1,11 @@
+// Copyright 2020 Sungjin.bae
+
 #include <iostream>
 
-#include "window.h"
+#include "internal/window.h"
 
 
-int main() {  
-
+int main() {
   std::cout << "hellow" << std::endl;
 
   auto a = BEngine::Window::Create();

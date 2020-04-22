@@ -1,5 +1,5 @@
-﻿#ifndef BV_CORE_WINDOW_H_
-#define BV_CORE_WINDOW_H_
+﻿#ifndef BV_CORE_INTERNAL_WINDOW_H_
+#define BV_CORE_INTERNAL_WINDOW_H_
 
 #include <memory>
 #include <mutex>
@@ -44,4 +44,4 @@ namespace BEngine {
 
 
 
-#endif // BV_CORE_WINDOW_H_
+#endif // BV_CORE_INTERNAL_WINDOW_H_

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "window.h"
+#include "internal/window.h"
 
 // static initilaize 시간에 GLWF 를 초기화한다.
 struct Static_Initialize_Time_GlFW_Init {
