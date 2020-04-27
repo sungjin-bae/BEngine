@@ -2,7 +2,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 PROJECT(BEngine)
 
-set ( CMAKE_CXX_FLAGS "-std=c++11" )
+set ( CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} /EHsc" )
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 set(Boost_USE_STATIC_LIBS OFF)
@@ -22,10 +22,12 @@ include_directories (
 set ( SOURCE
   src/main.cpp
   src/internal/window.cpp
+  src/internal/engine.cpp
 )
 
 set ( HEADERS
   include/internal/window.h
+  include/internal/engine.h
 )
 
 add_executable( ${PROJECT_NAME}
