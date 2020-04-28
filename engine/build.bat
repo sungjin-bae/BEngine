@@ -78,3 +78,4 @@ cd ..
 
 :QUIT
 echo Finish build.bat
+pause
