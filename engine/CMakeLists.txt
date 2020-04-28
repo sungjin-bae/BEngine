@@ -23,11 +23,15 @@ set ( SOURCE
   src/main.cpp
   src/internal/window.cpp
   src/internal/engine.cpp
+  src/internal/renderer.cpp
+  src/internal/window.cpp
 )
 
 set ( HEADERS
   include/internal/window.h
   include/internal/engine.h
+  include/internal/renderer.h
+  include/internal/window.h
 )
 
 add_executable( ${PROJECT_NAME}
