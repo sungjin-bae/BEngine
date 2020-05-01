@@ -19,6 +19,8 @@ jobs:
       run: sudo apt-get install libglfw3
     - name: install vulkan
       run: sudo apt-get install libvulkan1
+    - name : cmake
+      run: cmake
     - name: make
       run: make
     - name: make check
