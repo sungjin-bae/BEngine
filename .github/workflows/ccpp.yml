@@ -19,6 +19,12 @@ jobs:
       run: sudo apt-get install libglfw3-dev
     - name: install vulkan
       run: sudo apt-get install libvulkan1
+    - name: install python-pip
+      run: sudo apt-get install python-pip
+    - name: install cpplint
+      run: sudo pip install cpplint
+    - name: cpplint test
+      run: cpplint --recursive .
     - name: cmake
       run: cmake ./
     - name: make
