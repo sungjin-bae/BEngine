@@ -2,7 +2,11 @@
 
 
 #include <boost/make_shared.hpp>
+#ifdef __linux__
+#include <unistd.h>
+#endif  // __linux__
 #include <iostream>
+
 
 #include "internal/engine.h"
 #include "internal/renderer.h"
@@ -16,7 +20,11 @@ int main() {
   engine->Start();
   while (engine->IsRunning()) {
     // 임시로 정지.
-    Sleep(1);
+#ifdef __linux__
+    sleep(/* seconds */1);
+#else  // __linux__
+    Sleep(/* seconds */1);
+#endif  // __linux__
   }
   return 0;
-}
+}//asdfadsfasf
