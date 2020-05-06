@@ -1,15 +1,17 @@
-﻿// Copyright 2020 Sungjin.bae
+// Copyright 2020 Sungjin.bae
 
-#ifndef BENGINE_CORE_INTERNAL_WINDOW_H_
-#define BENGINE_CORE_INTERNAL_WINDOW_H_
+#ifndef INCLUDE_INTERNAL_WINDOW_H_
+#define INCLUDE_INTERNAL_WINDOW_H_
+
+
+#include <GLFW/glfw3.h>
+
+#include <memory>
 
 
 #include <boost/noncopyable.hpp>
 #include <boost/thread/thread.hpp>
-#include <memory>
-#include <mutex>
-
-#include <GLFW/glfw3.h>
+#include <boost/thread/mutex.hpp>
 
 
 namespace BEngine {
@@ -23,11 +25,11 @@ class Window : boost::noncopyable {
  private:
   void Draw(const int height, const int width);
   GLFWwindow* window_;
-  std::mutex mutex_;
+  boost::mutex mutex_;
 
   static const char** GetRequiredInstanceExtensions(uint32_t *extension_count);
 };
 
-} // namespace BEngine
+}  // namespace BEngine
 
-#endif // BENGINE_CORE_INTERNAL_WINDOW_H_
+#endif  // INCLUDE_INTERNAL_WINDOW_H_

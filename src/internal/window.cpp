@@ -1,4 +1,4 @@
-﻿// Copyright 2020 Sungjin.bae
+// Copyright 2020 Sungjin.bae
 
 #include <sstream>
 #include <iostream>
@@ -14,12 +14,12 @@ Window::Window() {
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
   glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-};
+}
 
 
 Window::~Window() {
   glfwTerminate();
-};
+}
 
 
 boost::thread *Window::Make(const int height, const int width) {
@@ -46,4 +46,4 @@ const char** Window::GetRequiredInstanceExtensions(uint32_t *extension_count) {
   return glfwGetRequiredInstanceExtensions(extension_count);
 }
 
-} // namespace BEngine
+}  // namespace BEngine

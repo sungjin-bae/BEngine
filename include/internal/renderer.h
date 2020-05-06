@@ -1,7 +1,7 @@
 // Copyright 2020 Sungjin.bae
 
-#ifndef BENGINE_CORE_INTERNAL_RENDERER_H_
-#define BENGINE_CORE_INTERNAL_RENDERER_H_
+#ifndef INCLUDE_INTERNAL_RENDERER_H_
+#define INCLUDE_INTERNAL_RENDERER_H_
 
 
 #include <boost/noncopyable.hpp>
@@ -30,6 +30,6 @@ class Renderer : boost::noncopyable {
   int window_width_ = 800;
 };
 
-} // namespace BEngine
+}  // namespace BEngine
 
-#endif // BENGINE_CORE_INTERNAL_RENDERER_H_
+#endif  // INCLUDE_INTERNAL_RENDERER_H_

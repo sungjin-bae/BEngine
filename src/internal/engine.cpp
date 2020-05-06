@@ -30,4 +30,4 @@ bool Engine::IsRunning() {
   return true;
 }
 
-} // namespace BEngine
+}  // namespace BEngine

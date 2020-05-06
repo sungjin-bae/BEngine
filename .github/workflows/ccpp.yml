@@ -24,7 +24,7 @@ jobs:
     - name: install cpplint
       run: sudo pip install cpplint
     - name: cpplint test
-      run: cpplint --recursive .
+      run: cpplint --recursive ../
     - name: cmake
       run: cmake ./
     - name: make

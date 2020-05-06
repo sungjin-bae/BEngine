@@ -11,7 +11,6 @@ Renderer::Renderer() {
 }
 
 Renderer::~Renderer() {
-
 }
 
 
@@ -23,4 +22,4 @@ void Renderer::Init(int additional_thread) {
   }
 }
 
-} // namespace BEngine
+}  // namespace BEngine
