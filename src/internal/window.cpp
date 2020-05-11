@@ -18,6 +18,8 @@ Window::Window() {
 
 
 Window::~Window() {
+  glfwDestroyWindow(window_);
+
   glfwTerminate();
 }
 
