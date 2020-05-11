@@ -3,7 +3,9 @@
 #ifndef INCLUDE_INTERNAL_WINDOW_H_
 #define INCLUDE_INTERNAL_WINDOW_H_
 
-
+// GLFW will include its own definitions and
+// automatically load the vulakn header
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 #include <memory>
