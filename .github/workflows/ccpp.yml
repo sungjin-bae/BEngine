@@ -25,8 +25,9 @@ jobs:
       run: brew install glfw
     - name: install vulkan
       run: |
-        curl -vLO https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.tar.gz
+        curl -vSLO https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.tar.gz?Human=true
         mkdir vulkan-sdk
+        mv vulkan-sdk.tar.gz?Human=true vulkan-sdk.tar.gz
         tar -xvf vulkan-sdk.tar.gz -C ./vulkan-sdk --strip-components 1
         cd vulkan-sdk
         chmod +x setup-env.sh
