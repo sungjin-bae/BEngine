@@ -20,9 +20,9 @@ int main() {
   engine->Start();
   while (engine->IsRunning()) {
     // 임시로 정지.
-#ifdef __linux__
+#if defined(__linux__) || defined(__APPLE__)
     sleep(/* seconds */1);
-#else  // __linux__
+#elif _WIN64
     Sleep(/* seconds */1);
 #endif  // __linux__
   }
