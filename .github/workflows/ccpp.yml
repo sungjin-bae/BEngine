@@ -32,7 +32,7 @@ jobs:
         cd vulkan-sdk
         chmod +x setup-env.sh
         ./setup-env.sh
-        python install_vulkan.py
+        python install_vulkan.py --force-install
         cd ..
     - name: cmake
       run: cmake ./ -G Xcode
