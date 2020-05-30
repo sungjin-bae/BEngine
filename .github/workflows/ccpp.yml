@@ -23,6 +23,8 @@ jobs:
       run: brew install boost
     - name: install glfw
       run: brew install glfw3
+    - name: brew install glm
+      run: brew install glm
     - name: install vulkan
       run: |
         curl -vSLO https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.tar.gz?Human=true
