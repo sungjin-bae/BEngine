@@ -23,6 +23,7 @@ endif (UNIX)
 
 find_package(Vulkan REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(glm REQUIRED)
 
 include_directories (
     include )
