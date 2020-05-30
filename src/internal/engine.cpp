@@ -27,6 +27,7 @@ bool Engine::Start() {
 
 
 bool Engine::IsRunning() {
+  renderer_->Update();
   return true;
 }
 

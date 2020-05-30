@@ -21,7 +21,8 @@ class Window : boost::noncopyable {
   Window();
   ~Window();
 
-  void Draw(const int height, const int width);
+  void Init(const int height, const int width);
+  void Update();
  private:
   GLFWwindow* window_;
   boost::mutex mutex_;

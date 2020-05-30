@@ -5,7 +5,6 @@
 
 #include "internal/window.h"
 
-
 namespace BEngine {
 
 Window::Window() {
@@ -23,14 +22,17 @@ Window::~Window() {
   glfwTerminate();
 }
 
-
-void Window::Draw(const int height, const int width) {
+void Window::Init(const int height, const int width) {
   window_ = glfwCreateWindow(height, width, "Vulkan", nullptr, nullptr);
   BOOST_ASSERT(window_ != nullptr);
+}
 
+
+void Window::Update() {
+  BOOST_ASSERT(window_ != nullptr);
   // This function returns the value of the close flag of
   // the specified Window.
-  while (!glfwWindowShouldClose(window_)) {
+  if (!glfwWindowShouldClose(window_)) {
     // polling glfw event and retrun immediately
     glfwPollEvents();
   }
