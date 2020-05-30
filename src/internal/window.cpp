@@ -24,12 +24,6 @@ Window::~Window() {
 }
 
 
-boost::thread *Window::Make(const int height, const int width) {
-  return new boost::thread(
-      boost::bind(&Window::Draw, this, height, width));
-}
-
-
 void Window::Draw(const int height, const int width) {
   window_ = glfwCreateWindow(height, width, "Vulkan", nullptr, nullptr);
   BOOST_ASSERT(window_ != nullptr);

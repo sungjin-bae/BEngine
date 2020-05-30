@@ -16,10 +16,11 @@ Renderer::~Renderer() {
 
 void Renderer::Init(int additional_thread) {
   window_ = boost::make_shared<Window>();
-  auto window_thread = window_->Make(window_width_, window_height_);
-  if (window_thread != nullptr) {
-    threads_.add_thread(window_thread);
-  }
+}
+
+
+void Renderer::Update() {
+  window_->Draw(window_height_, window_width_);
 }
 
 }  // namespace BEngine

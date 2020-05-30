@@ -10,9 +10,7 @@
 
 #include <memory>
 
-
 #include <boost/noncopyable.hpp>
-#include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>
 
 
@@ -23,9 +21,9 @@ class Window : boost::noncopyable {
   Window();
   ~Window();
 
-  boost::thread *Make(const int height, const int width);
- private:
   void Draw(const int height, const int width);
+ private:
+
   GLFWwindow* window_;
   boost::mutex mutex_;
 

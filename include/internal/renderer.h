@@ -5,7 +5,6 @@
 
 
 #include <boost/noncopyable.hpp>
-#include <boost/thread/thread.hpp>
 #include <boost/shared_ptr.hpp>
 
 #include "internal/window.h"
@@ -21,9 +20,9 @@ class Renderer : boost::noncopyable {
   ~Renderer();
 
   void Init(int additional_thread);
+  void Update();
 
  private:
-  boost::thread_group threads_;
   boost::shared_ptr<Window> window_ = nullptr;
 
   int window_height_ = 800;
