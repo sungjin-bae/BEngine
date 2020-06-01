@@ -22,7 +22,9 @@ jobs:
     - name: install boost
       run: brew install boost
     - name: install glfw
-      run: brew install glfw3
+      run: |
+        brew install glfw3
+        ln -s /usr/local/lib/cmake/glfw /usr/local/lib/cmake/glfw3
     - name: brew install glm
       run: brew install glm
     - name: install vulkan
