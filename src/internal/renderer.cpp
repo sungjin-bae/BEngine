@@ -15,8 +15,7 @@ Renderer::~Renderer() {
 
 
 void Renderer::Init(int additional_thread) {
-  window_ = boost::make_shared<Window>();
-  window_->Init(window_height_, window_width_);
+  window_ = boost::make_shared<Window>(window_height_, window_width_);
 }
 
 

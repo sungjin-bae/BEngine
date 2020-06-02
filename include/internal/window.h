@@ -12,22 +12,27 @@
 
 #include <boost/noncopyable.hpp>
 #include <boost/thread/mutex.hpp>
+#include <vulkan/vulkan.h>
 
 
 namespace BEngine {
 
 class Window : boost::noncopyable {
  public:
-  Window();
+  Window(const int height, const int width);
   ~Window();
 
-  void Init(const int height, const int width);
   void Update();
  private:
-  GLFWwindow* window_;
-  boost::mutex mutex_;
+  void InitGLFW(const int height, const int width);
+  void InitVulkan();
+  void SetupDebugMessenger();
 
-  static const char** GetRequiredInstanceExtensions(uint32_t *extension_count);
+  void ClearGLFW();
+  void ClearVulkan();
+  GLFWwindow* window_ = nullptr;
+  VkInstance vk_instance_ = nullptr;
+  VkDebugUtilsMessengerEXT debuger_messenger_ = nullptr;
 };
 
 }  // namespace BEngine
